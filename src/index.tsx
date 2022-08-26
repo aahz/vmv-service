@@ -41,6 +41,8 @@ class VMVService extends React.Component<IVMVServicePropTypes, IVMVServiceStateT
 }
 
 (function (window, document, undefined) {
+	const root = ReactDOM.createRoot(window.document.getElementById('vmv-service'));
+
 	Promise.all([
 		new Promise((resolve) => {
 			window.addEventListener('load', resolve);
@@ -50,8 +52,6 @@ class VMVService extends React.Component<IVMVServicePropTypes, IVMVServiceStateT
 		}),
 	])
 		.then(() => {
-			const root = ReactDOM.createRoot(window.document.getElementById('vmv-service'));
-
 			root.render(<VMVService />);
 		});
 })(window, window.document);
