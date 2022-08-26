@@ -46,7 +46,7 @@
     "eslint-plugin-jest": "24.3.6",
     "eslint-plugin-prettier": "3.4.0",
     "eslint-plugin-simple-import-sort": "7.0.0",
-    "favicons": "7.0.0-beta.5",
+    "favicons": "6.2.2",
     "favicons-webpack-plugin": "5.0.2",
     "html-loader": "2.1.2",
     "html-webpack-plugin": "5.3.1",

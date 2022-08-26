@@ -14,21 +14,23 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "index.html",
-    }),
     new FaviconsWebpackPlugin({
       logo: './src/assets/logo.png',
       inject: true,
       favicons: {
         appName: 'vmv-service',
         addDescription: 'VMV Service',
-        developerName: 'Andrei Ozdon',
-        developerURL: 'https://github.com/aahz',
-        background: '#1e1e1e',
-        theme_color: '#378EF0',
+         developerName: 'Andrei Ozdon',
+         developerURL: 'https://github.com/aahz',
+         background: '#1e1e1e',
+         theme_color: '#378EF0',
       }
-    })
+    }),
+    new HtmlWebpackPlugin({
+      template: "index.html",
+      inject: 'body',
+      publicPath: '/',
+    }),
   ],
   module: {
     rules: [
