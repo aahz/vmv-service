@@ -1,6 +1,6 @@
 {
   "name": "vmv-service",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "scripts": {
     "dev": "webpack serve --open --config webpack.dev.js",
