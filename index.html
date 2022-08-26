@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>VMV Service</title>
+
+		<style>
+			html, body {
+				background-color: #1e1e1e;
+			}
+
+			@keyframes throbber {
+				0%, 100% {
+					transform: scale(1);
+				}
+
+				60% {
+					transform: scale(.8);
+				}
+			}
+
+			@keyframes throbber-time {
+				0% {
+					transform: rotate(0deg);
+				}
+
+				25% {
+					transform: rotate(90deg);
+				}
+
+				50% {
+					transform: rotate(180deg);
+				}
+
+				75% {
+					transform: rotate(270deg);
+				}
+
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+
+			#vmv-throbber {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 80px;
+				height: 80px;
+				margin: -40px 0 0 -40px;
+				background-color: #378EF0;
+				border-radius: 40px;
+				animation: throbber 2s linear infinite;
+				overflow: hidden;
+			}
+
+			#vmv-throbber:before,
+			#vmv-throbber:after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				background-color: #ffffff;
+				border-radius: 40px;
+				opacity: .75;
+			}
+
+			#vmv-throbber:before {
+				width: 7px;
+				height: 25px;
+				margin: -30px 0 0 -3.5px;
+				animation: throbber-time 4s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+				transform-origin: 50% 30px;
+				opacity: .75;
+			}
+
+			#vmv-throbber:after {
+				width: 5px;
+				height: 35px;
+				margin: -35px 0 0 -2.5px;
+				animation: throbber-time 1s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+				transform-origin: 50% 35px;
+				opacity: .5;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="vmv-throbber"></div>
+		<main id="vmv-service"></main>
+	</body>
+</html>
