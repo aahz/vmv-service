@@ -1,6 +1,7 @@
 const path = require("path");
 
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -16,6 +17,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "index.html",
     }),
+    new FaviconsWebpackPlugin({
+      logo: './src/assets/logo.png',
+      inject: true,
+      favicons: {
+        appName: 'vmv-service',
+        addDescription: 'VMV Service',
+        developerName: 'Andrei Ozdon',
+        developerURL: 'https://github.com/aahz',
+        background: '#1e1e1e',
+        theme_color: '#378EF0',
+      }
+    })
   ],
   module: {
     rules: [
@@ -30,18 +43,18 @@ module.exports = {
           loader: "ts-loader",
         },
       },
-	    {
-		    test: /\.less$/i,
-		    use: [
-			    "style-loader",
-			    "css-loader",
-			    "less-loader",
-		    ],
-	    },
+      {
+        test: /\.less$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          "less-loader",
+        ],
+      },
       {
         test: /\.css$/i,
         use: [
-	        "style-loader",
+            "style-loader",
             "css-loader",
         ],
       },

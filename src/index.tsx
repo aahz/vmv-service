@@ -3,7 +3,8 @@ import * as ReactDOM from 'react-dom/client';
 
 import {
 	Provider,
-	defaultTheme} from "@adobe/react-spectrum";
+	defaultTheme
+} from "@adobe/react-spectrum";
 
 import {Header} from './components/header';
 import {Tiles} from './components/tiles';
